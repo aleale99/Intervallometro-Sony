@@ -6,7 +6,10 @@ serve per fare bla bla bla
 #include "configure_hw.h"  // configurazione pin Arduino e stepper
 #include "configure_sw.h"  // costanti,flag e variabili
 #include "limiters.h"  	// gestione limit switch
+#include "BasicStepperDriver.h"     // controllo stepper
 
+
+BasicStepperDriver stepper(MOTOR_STEPS, PIN_DIR, PIN_STEP, PIN_ENABLE);
 
 //----------------------------------------------------------------
 void setup() {
@@ -16,6 +19,7 @@ void setup() {
   Serial.println()
   Serial.print("Mainamacro HW:" + VERSION_HW + " SW:" + VERSION_SW + " initialize completed")
 }
+
 
 //----------------------------------------------------------------
 void loop()
